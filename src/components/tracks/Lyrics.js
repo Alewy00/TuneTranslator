@@ -66,9 +66,12 @@ const Lyrics = (props) => {
             // const lyricsData = response.data.message.body.lyrics;
             if (response.data !== undefined) {
               console.log(response);
-              const lyricsData = response.data.translations[0].translatedText;
-              const formatLyric = lyricsData.replace("&#39;", "'");
-              setLyrics(formatLyric);
+              let lyricsData = response.data.translations[0].translatedText;
+              while (lyricsData.includes("&#39")) {
+                console.log("in loop");
+                lyricsData = lyricsData.replace("&#39;", "'");
+              }
+              setLyrics(lyricsData);
             }
           });
       } catch (error) {
