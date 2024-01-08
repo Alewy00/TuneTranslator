@@ -1,0 +1,13 @@
+.lyrics-line {
+  opacity: 0;
+  transition: opacity 5s ease-in-out; /* Adjust the duration as needed */
+}
+
+.fade-in-out {
+  opacity: 1;
+}
+
+.current-line {
+  color: blue;
+  opacity: 1; /* Show the current line */
+}

@@ -10,7 +10,7 @@ const Search = () => {
   useEffect(() => {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${trackTitle}&f_has_subtitle=1&f_has_lyrics&page_size=2&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`
+        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${trackTitle}&f_has_subtitle=1&f_has_lyrics&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`
       )
       .then((res) => {
         let track_list = res.data.message.body.track_list;
